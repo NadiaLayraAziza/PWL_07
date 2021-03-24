@@ -23,11 +23,11 @@
             <th>Nim</th>
             <th>Nama</th>
             <th>Tanggal_Lahir</th>
-            <th>Kelas</th>
+            <th width="100px">Kelas</th>
             <th>Jurusan</th>
             <th>No_Handphone</th>
             <th>Email</th>
-            <th width="280px">Action</th>
+            <th width="400px">Action</th>
         </tr>
         @foreach ($mahasiswas as $Mahasiswa)
         <tr>
