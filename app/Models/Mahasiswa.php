@@ -18,10 +18,12 @@ class Mahasiswa extends Model //Definisi Model
      * @var array
      */
     protected $fillable = [
-    'Nim',
-    'Nama',
-    'Kelas',
-    'Jurusan',
-    'No_Handphone',
+        'Nim',
+        'Nama',
+        'Tanggal_Lahir',
+        'Kelas',
+        'Jurusan',
+        'No_Handphone',
+        'Email',
     ];
 }
