@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Mahasiswa;
+use App\Models\Kelas; 
 use Illuminate\Http\Request;
 
 class MahasiswaController extends Controller
@@ -15,10 +16,11 @@ class MahasiswaController extends Controller
     public function index(Request $request)
     {
         if($request->has('search')){ // Pemilihan jika ingin melakukan pencarian nama
-            $mahasiswas = Mahasiswa::where('Nama', 'like', "%".$request->search."%")->paginate(5);
+            $mahasiswas = Mahasiswa::where('Nama', 'like', "%".$request->search."%")
+            ->with('kelas')->paginate(3); //yang semula Mahasiswa::all, diubah menjadi with() yang menyatakan relasi
         } else { // Pemilihan jika tidak melakukan pencarian nama
             //fungsi eloquent menampilkan data menggunakan pagination
-            $mahasiswas = Mahasiswa::paginate(5); // Pagination menampilkan 5 data
+            $mahasiswas = Mahasiswa::with('kelas')->paginate(3); // Pagination menampilkan 3 data
         }
         return view('users.index', compact('mahasiswas'));
     }
