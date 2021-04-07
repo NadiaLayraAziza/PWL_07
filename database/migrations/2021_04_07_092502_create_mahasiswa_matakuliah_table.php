@@ -15,6 +15,13 @@ class CreateMahasiswaMatakuliahTable extends Migration
     {
         Schema::create('mahasiswa_matakuliah', function (Blueprint $table) {
             $table->id();
+            $table->string('mahasiswa_id',15)->nullable();
+            //menambah foreign key di kolom mahasiswa_id
+            $table->foreign('mahasiswa_id')->references('Nim')->on('mahasiswa'); 
+            $table->unsignedBigInteger('matakuliah_id')->nullable();
+            //menambah foreign key di kolom matakuliah_id
+            $table->foreign('matakuliah_id')->references('id')->on('matakuliah'); 
+            $table->integer('nilai');  
             $table->timestamps();
         });
     }
