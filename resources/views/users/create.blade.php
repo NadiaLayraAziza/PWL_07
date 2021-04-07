@@ -35,8 +35,8 @@
                         <input type="date" name="Tanggal_Lahir" class="form-control" id="Tanggal_Lahir" aria-describedby="Tanggal_Lahir" > 
                     </div>
                     <div class="form-group">
-                        <label for="Kelas">Kelas</label>
-                        <select class="form-control">
+                        <label for="kelas">Kelas</label>
+                        <select type="kelas" name="kelas" class="form-control" id="kelas">
                             @foreach ($kelas as $kls)
                                 <option value="{{$kls->id}}">{{$kls->nama_kelas}}</option>
                             @endforeach  

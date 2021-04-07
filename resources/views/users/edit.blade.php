@@ -36,8 +36,14 @@
                         <input type="date" name="Tanggal_Lahir" class="form-control" id="Tanggal_Lahir" value="{{ $Mahasiswa->Tanggal_Lahir }}" aria-describedby="Tanggal_Lahir" > 
                     </div>
                     <div class="form-group">
-                        <label for="Kelas">Kelas</label> 
-                        <input type="Kelas" name="Kelas" class="form-control" id="Kelas" value="{{ $Mahasiswa->Kelas }}" aria-describedby="Kelas" > 
+                        <label for="kelas">Kelas</label> 
+                        <select type="kelas" name="kelas" class="form-control" id="kelas">
+                            @foreach($kelas as $kls)
+                                <option value="{{ $kls->id }}" 
+                                    {{ $Mahasiswa->kelas_id == $kls->id ? 'selected' : '' }}>
+                                    {{ $kls->nama_kelas }}</option>
+                            @endforeach
+                        </select>
                     </div>
                     <div class="form-group">
                         <label for="Jurusan">Jurusan</label> 
